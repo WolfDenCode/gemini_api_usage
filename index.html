@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Language Model Interaction</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Language Model Interactive App</h1>
+
+      <!-- Prompt to Text Interaction -->
+      <div id="text-interaction">
+        <h2>Ask Anything</h2>
+        <form id="text-form">
+          <textarea
+            id="text-prompt"
+            placeholder="Type your prompt here..."
+          ></textarea>
+          <button type="submit">Submit</button>
+        </form>
+        <div id="text-response"></div>
+      </div>
+
+      <!-- Prompt + Image to Text Interaction -->
+      <div id="image-interaction">
+        <h2>Generate a Response with Image</h2>
+        <form id="image-form">
+          <textarea
+            id="image-prompt"
+            placeholder="Describe the image here..."
+          ></textarea>
+          <input type="file" id="image-file" accept="image/*" />
+          <img
+            id="image-preview"
+            style="display: none; max-width: 100%; margin-top: 10px"
+          />
+          <button type="submit">Generate</button>
+        </form>
+
+        <div id="image-response"></div>
+      </div>
+        
+      <!-- Chatbot Interaction -->
+      <div id="chatbot-interaction">
+        <h2>Chat with AI</h2>
+        <div id="chat-history"></div>
+        <form id="chat-form">
+          <input
+            type="text"
+            id="chat-input"
+            placeholder="Type a message..."
+            required
+          />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+    </div>
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+    <script type="module" src="text_features.js"></script>
+  </body>
+</html>
